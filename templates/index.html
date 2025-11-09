@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Марина — Python-разработчик</title>
+    <style>
+        /* 🌙 Общие стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0e1117;
+            color: #e4e6eb;
+            line-height: 1.9;
+            font-size: 20px;
+        }
+
+        /* 🧭 Шапка сайта */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            overflow: hidden;
+        }
+
+        /* ✨ Анимации */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header img.avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        header img.avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(78,154,241,0.5);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.6s forwards;
+        }
+
+        header p {
+            font-size: 1.6rem;
+            opacity: 0.9;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 1.2s forwards;
+        }
+
+        /* 🔗 Контакты */
+        .contacts {
+            margin-top: 25px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 1.8s forwards;
+        }
+
+        .contacts a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.8rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contacts a:hover {
+            color: #4e9af1;
+            transform: translateY(-5px);
+        }
+
+        /* 🔹 Основные секции */
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #1b1f27;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        section h2 {
+            border-left: 6px solid #4e9af1;
+            padding-left: 12px;
+            color: #4e9af1;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        ul, ol {
+            margin: 12px 0 0 28px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .skills p {
+            background: #2d333b;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        /* ⚙️ Подвал */
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #14171f;
+            color: #ccc;
+            margin-top: 50px;
+            font-size: 1.1rem;
+        }
+
+        footer a {
+            color: #4e9af1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 📱 Адаптивность */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.8rem; }
+            header p { font-size: 1.4rem; }
+            section { margin: 25px 10px; padding: 25px; }
+            section h2 { font-size: 1.7rem; }
+            li { font-size: 1.1rem; }
+            p { font-size: 1.1rem; }
+        }
+
+        /* ✨ Эффекты при наведении */
+        li:hover {
+            color: #4e9af1;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 📸 Фото Марина -->
+        <img src="{{ url_for('static', filename='images/marina.png') }}" alt="Марина" class="avatar">
+
+        <!-- 💼 Основная информация -->
+        <h1>Марина — Python-разработчик</h1>
+        <p>Создаю сайты, Telegram-ботов и автоматизацию для бизнеса</p>
+
+        <!-- 🔗 Контакты с иконками -->
+        <div class="contacts">
+            <a href="mailto:2021marinabulova@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://t.me/marina_bulova" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://github.com/marinabich1983-coder" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2>Обо мне</h2>
+        <p>Я Python-разработчик с практическим опытом в создании телеграм-ботов, API и скриптов автоматизации. Работаю быстро, нацелена на результат и всегда соблюдаю сроки!</p>
+        <p><strong>Опыт работы:</strong> 4 года в Python-разработке.</p>
+    </section>
+
+    <section class="technologies">
+        <h2>Технологии и инструменты</h2>
+        <ul>
+            <li><strong>Основное:</strong> Python 3.12, Git, Docker, Postman, тестирование API, VS Code / PyCharm</li>
+            <li><strong>Веб-разработка:</strong> Flask, FastAPI, Django, Jinja2, HTML / CSS / JavaScript (базовый уровень)</li>
+            <li><strong>Боты:</strong> aiogram, pyTelegramBotAPI, vk_api, discord.py, whatsapp-api</li>
+            <li><strong>Парсинг и обработка данных:</strong> requests, BeautifulSoup, lxml, Scrapy, re, pandas, openpyxl / xlrd / xlsxwriter, json / csv / xml</li>
+            <li><strong>Базы данных:</strong> SQLite, PostgreSQL / MySQL, SQLAlchemy, Django ORM, MongoDB, Redis</li>
+        </ul>
+    </section>
+
+    <section class="workflow">
+        <h2>Как я работаю</h2>
+        <ol>
+            <li>Изучаю ваш проект и цели — чтобы предложить оптимальное решение.</li>
+            <li>Показываю примеры и могу выполнить мини-демо или тестовую задачу.</li>
+            <li>Согласовываю сроки, стоимость и результат — всё прозрачно.</li>
+            <li>После выполнения поддерживаю связь и предлагаю улучшения.</li>
+        </ol>
+    </section>
+
+    <section class="skills">
+        <h2>Навыки</h2>
+        <p>Python • FastAPI • pyTelegramBotAPI • VK API • BeautifulSoup • Pandas • Django REST Framework • Whatsapp API</p>
+    </section>
+
+    <section class="projects">
+        <h2>Мои проекты</h2>
+        <ul>
+            <li>Telegram-бот для продаж</li>
+            <li>Парсер данных на Python</li>
+            <li>Веб-приложение на Flask</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Марина | Python-разработчик</p>
+        <p>
+            📧 <a href="mailto:2021marinabulova@gmail.com">2021marinabulova@gmail.com</a> |
+            💬 <a href="https://t.me/marina_bulova" target="_blank">@marina_bulova</a> |
+            🌐 <a href="https://github.com/marinabich1983-coder" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
+
